@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>countHi</title>
+    <title>stringBits</title>
 
     <link href="../output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
@@ -18,22 +18,18 @@
 
 <body>
     
-    <h1 class="w-fit m-auto my-5 font-sans text-white text-3xl">countHi</h1>
+    <h1 class="w-fit m-auto my-5 font-sans text-white text-3xl">stringBits</h1>
     <div class="w-fit m-auto">
-        <pre class="java text-sm"><code>public int countHi(String str) {
-    int count = 0;
-
-    // we can only go up to str.length() - 1 instead of str.length() bc we're looking at substrings with length 2
-    // if our index is at the last character, there is no character in front
-    // thus we will get an out of bounds error using substring because of the i + 2
-    for (int i =  0; i < str.length() - 1; i++) {
-        // if the substring is hi we increase the count
-        if (str.substring(i, i + 2).equals("hi")) {
-            count++;
-        }
+        <pre class="java text-sm"><code>public String stringBits(String str) {
+    String res = "";
+    
+    // because we want to skip every other letter, we're increasing i by 2 instead of 1
+    // this starts at 0 and then goes to 2, 4, 6, and so on, skipping 1, 2, 5, etc.
+    for (int i = 0; i < str.length(); i += 2) {
+        res += str.charAt(i);
     }
 
-    return count;
+    return res;
 }</code></pre>
     </div>
     <div class="w-fit m-auto my-5">

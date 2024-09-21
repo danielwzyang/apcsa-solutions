@@ -1,0 +1,11 @@
+public String stringBits(String str) {
+    String res = "";
+    
+    // because we want to skip every other letter, we're increasing i by 2 instead of 1
+    // this starts at 0 and then goes to 2, 4, 6, and so on, skipping 1, 2, 5, etc.
+    for (int i = 0; i < str.length(); i += 2) {
+        res += str.charAt(i);
+    }
+
+    return res;
+}

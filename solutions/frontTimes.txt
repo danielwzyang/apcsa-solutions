@@ -1,0 +1,23 @@
+public String frontTimes(String str, int n) {
+    // the first step is to get the last 3 characters of the string; i'm calling it sub
+    String sub = "";
+    // we need to check to see if the length is less than 3 characters 
+    // if we don't check and the string is less than 3 characters, substring(0, 3) will cause an error
+    if (str.length() < 3) {
+        // if the string is less than 3 characters we just set sub to the string
+        sub = str;
+    } else {
+        // if it's greater than or equal to 3 characters, we will just take the last 3 characters
+        sub = str.substring(0, 3);
+    }
+    
+    String res = "";
+    // now this is the same thing as another problem, stringTimes
+    // whatever is in the for loop is called n times
+    for (int i = 0; i < n; i++) {
+        // we add the last 3 characters of the string to our result
+        res += sub;
+    }
+    
+    return res;
+}
