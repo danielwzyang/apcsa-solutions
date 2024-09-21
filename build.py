@@ -46,7 +46,7 @@ elements = ""
 
 # converts the names into <li> elements for html
 for name in nameList:
-    elements += f'<li><a href="apcsa-solutions/solutions/{name}.html">{name}</a></li>'
+    elements += f'<li><a href="solutions/{name}.html">{name}</a></li>'
 
 # using a template again
 with open("./indexTemplate.html", "r") as file:
