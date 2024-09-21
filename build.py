@@ -1,5 +1,6 @@
 # this file is used to convert the .java files from the ./src folder into .html files in the ./solutions folder
 # it does this using a template of an html file and adding the text from the .java file into the .html file
+# this also updates the list of links in the homepage
 
 # imports a python module that allows us to read the file system
 import os
@@ -45,7 +46,7 @@ elements = ""
 
 # converts the names into <li> elements for html
 for name in nameList:
-    elements += f'<li><a href="solutions/{name}.html">{name}</a></li>'
+    elements += f'<li><a href="apcsa-solutions/solutions/{name}.html">{name}</a></li>'
 
 # using a template again
 with open("./indexTemplate.html", "r") as file:
