@@ -1,0 +1,17 @@
+public int countCode(String str) {
+    int count = 0;
+
+    // we need to end our for loop when i is str.length() - 3 because our substring window is going to be 4 characters long
+    // if i >= str.length() - 3, we will get an out of bounds error because there aren't enough characters in front 
+    for (int i = 0; i < str.length() - 3; i++) {
+        // because the problem says that we can ignore the 3rd letter, we check the first two letters and the last letter
+        // to check the first two we can use a substring and see if it equals to "co"
+        // to check the last one we can just use charAt
+        
+        if (str.substring(i, i + 2).equals("co") && str.charAt(i + 3) == 'e') {
+            count += 1;
+        }
+    }
+
+    return count;
+}

@@ -1,0 +1,12 @@
+public String stringX(String str) {
+    String res = "";
+    for (int i = 0; i < str.length(); i++) {
+        // we only want to add a character if it's not x
+        // if it is x, we can still add it if it's at the start or the end
+        if (str.charAt(i) != 'x' || i == 0 || i == str.length() - 1) {
+            res += str.charAt(i);
+        }
+    }
+    
+    return res;
+}
