@@ -4,13 +4,12 @@ public int sumDigits(String str) {
     
     // loops through every index of the string
     for (int i = 0; i < str.length(); i++) {
-        // checks to see if the current character is a number
+        // Character.isDigit() checks to see if a character is a number
         if (Character.isDigit(str.charAt(i))) {
             res += Integer.parseInt(str.substring(i, i + 1));
 
             // Integer.parseInt() converts a string into a number
-            // we need to use substring here instead of charAt 
-            // charAt returns a character type and parseInt only takes strings
+            // parseInt only takes strings and charAt returns a character type, so we need to use substring
         }
     }
     return res;
