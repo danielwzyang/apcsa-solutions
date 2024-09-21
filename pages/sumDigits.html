@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>sumDigits</title>
 
     <link href="../output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
@@ -18,12 +18,24 @@
 
 <body>
     
-    <h1 class="w-fit m-auto my-5 font-sans text-white text-3xl">Test</h1>
+    <h1 class="w-fit m-auto my-5 font-sans text-white text-3xl">sumDigits</h1>
     <div class="w-fit m-auto">
-        <pre class="text-sm"><code>public class Test {
-    public static void main(String[] args) {
-        // hello
+        <pre class="java text-sm"><code>public int sumDigits(String str) {
+    // creates an integer to store our sum
+    int res = 0;
+    
+    // loops through every index of the string
+    for (int i = 0; i < str.length(); i++) {
+        // checks to see if the current character is a number
+        if (Character.isDigit(str.charAt(i))) {
+            res += Integer.parseInt(str.substring(i, i + 1));
+
+            // Integer.parseInt() converts a string into a number
+            // we need to use substring here instead of charAt 
+            // charAt returns a character type and parseInt only takes strings
+        }
     }
+    return res;
 }</code></pre>
     </div>
     <div class="w-fit m-auto my-5">

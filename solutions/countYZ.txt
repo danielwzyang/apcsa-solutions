@@ -1,0 +1,22 @@
+public int countYZ(String str) {
+    // we set the string to all lowercase because the problem specifies that it's not case sensitive
+    str = str.toLowerCase();
+
+    // start our count
+    int count = 0;
+
+    // loop through the indexes of the string
+    for (int i = 0; i < str.length(); i++) {
+        // if the current character is y or z AND the character is at the end or there's not a letter in front of it
+        // if the character is at the end then there's no character in front of it so it's going to be valid
+        // if the character isn't at the end then we need to make sure the character in front of it isn't a letter
+        // Character.isLetter() checks whether the input is a letter or not
+
+        if ((str.charAt(i) == 'y' || str.charAt(i) == 'z') &&
+        (i == str.length() - 1 || !Character.isLetter(str.charAt(i + 1)))) {
+            count += 1;
+        }
+    }
+
+    return count;
+}
