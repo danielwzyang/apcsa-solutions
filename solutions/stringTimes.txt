@@ -1,0 +1,13 @@
+public String stringTimes(String str, int n) {
+    String res = "";
+    
+    // we're basically running the code inside the for loop n times
+    // ex: n = 3; i runs through 0, 1, 2
+    // for each iteration of the loop we will concat to our result
+    for (int i = 0; i < n; i ++) {
+        res += str;
+    }
+    // by the end we have n strings added together which is our answer
+
+    return res;
+}

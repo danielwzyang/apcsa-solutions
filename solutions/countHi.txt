@@ -1,0 +1,17 @@
+public int countHi(String str) {
+    int count = 0;
+
+    // we can only go up to str.length() - 1 instead of str.length()
+    // bc we're looking at substrings with length 2
+    // if our index is at the last character, there is no character in front
+    // thus we will get an out of bounds error using substring because of the i + 2
+    for (int i =  0; i < str.length() - 1; i++) {
+        // our substring window looks at the current character and the next character
+        // if the substring is hi we increase the count
+        if (str.substring(i, i + 2).equals("hi")) {
+            count++;
+        }
+    }
+    
+    return count;
+}
