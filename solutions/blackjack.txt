@@ -1,0 +1,23 @@
+public int blackjack(int a, int b) {
+    // if both of them are over 21 then we return 0
+    if (a > 21 && b > 21) {
+        return 0;
+    }
+    
+    // if a is over 21 we return b
+    if (a > 21) {
+        return b;
+    }
+    
+    if b is over 21 we return a
+    if (b > 21) {
+        return a;
+    }
+    
+    // now we know neither of them are over 21 so we just return the one that's larger
+    if (a < b) {
+        return b;
+    }
+    
+    return a;
+}

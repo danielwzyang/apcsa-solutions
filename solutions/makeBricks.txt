@@ -1,0 +1,6 @@
+public boolean makeBricks(int small, int big, int goal) {
+    // the two ways that this could fail is if we don't have enough bricks or we don't have enough small bricks
+    // the total length of our bricks is big * 5 + small
+    // the number of small bricks we need is the goal % 5 since the rest is filled with big bricks
+    return (goal <= big * 5 + small) && (goal % 5 <= small);
+}

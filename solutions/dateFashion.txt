@@ -1,0 +1,13 @@
+public int dateFashion(int you, int date) {
+    if (you <= 2 || date <= 2) {
+        // if either of us has a style less than 2, we return no
+        return 0;
+    } 
+    else if (you >= 8 || date >= 8) {
+        // if either of us has a style greater than or equal to 8, we return yes
+        return 2;
+    }
+
+    // otherwise we return maybe
+    return 1;
+}

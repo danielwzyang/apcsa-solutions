@@ -1,0 +1,4 @@
+public boolean parrotTrouble(boolean talking, int hour) {
+    // we are in trouble if the parrot is talking and the hour is between 7 and 20
+    return talking && (hour < 7 || hour > 20); 
+}

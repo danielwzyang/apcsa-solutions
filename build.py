@@ -7,6 +7,10 @@ import os
 
 # lists all the files in the directory ./solutions
 files = os.listdir("./solutions")
+# i have a directory on my local inside of the solutions directory called new
+# this stores the problems whose due date hasn't passed yet
+# im filtering out the directory so i'm only left with the old problems
+files = [file for file in files if file !="new"]
 
 # opens a template of an html file that i made since we're using it later when we make the new .html files
 with open("./template.html", "r") as file:
