@@ -20,7 +20,10 @@
 
             var list = document.getElementById("list")
             list.innerHTML = ""
-            newData.forEach(name => {
+            if (newData.length == 0) {
+                list.innerText = "No results found."
+            } else {
+                newData.forEach(name => {
                 var link = document.createElement("a")
                 link.className = "w-fit text-base px-3 py-1 border rounded-xl hover:bg-[#2b2b33]"
                 link.href = `pages/${name}.html`
@@ -28,6 +31,7 @@
 
                 list.appendChild(link)
             })
+            }
         }
 
         update()
