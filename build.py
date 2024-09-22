@@ -1,4 +1,4 @@
-# this file is used to convert the .txt files from the ./src folder into .html files in the ./pages folder
+# this file is used to convert the .txt files from the ./solutions folder into .html files in the ./pages folder
 # it does this using a template of an html file and adding the text from the .txt file into the .html file
 # this also updates the list of links in the homepage
 
@@ -58,7 +58,6 @@ with open("./indexTemplate.html", "r") as file:
     content = file.read()
     content = content.replace("[list]", elements)
     
-    # writing the content
+# writing the content into the homepage
     with open("./index.html", "w") as file:
         file.write(content)
-
