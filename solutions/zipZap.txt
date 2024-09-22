@@ -1,0 +1,24 @@
+public String zipZap(String str) {
+    // if our string is less than 3 characters long, then it cannot match the pattern
+    if (str.length() < 3) {
+        return str;
+    }
+    
+    String res = "";
+    for (int i = 0; i < str.length(); i++) {
+        // for every character we pass, we add it to our result
+        res += str.charAt(i);
+
+        // this code checks to see if we're at the z of the pattern z_p
+        // i needs to be less than str.length() - 2 because that's the last possible valid substring
+        // anything past that is too short to be z_p
+        // the character we're at also needs to be z and the character after the next one has to be p
+        if (i < str.length() - 2 && str.charAt(i) == 'z' && str.charAt(i + 2) == 'p') {
+            // if all of this is true then we skip the next character so we don't add it to our result
+            // we do this by increasing our index
+            i++;
+        }
+    }
+    
+    return res;
+}

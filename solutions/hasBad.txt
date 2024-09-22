@@ -1,0 +1,14 @@
+public boolean hasBad(String str) {
+    // the string cannot have bad if it's less than 3 characters long
+    if (str.length() < 3) {
+        return false;
+    }
+    
+    // if the string is 3 characters long, we don't have to check if there's bad starting at index 1
+    if (str.length() == 3) {
+        return str.equals("bad");
+    }
+    
+    // if the string is more than 3 characters long, then we also check if there's bad starting at index 1
+    return str.substring(0, 3).equals("bad") || str.substring(1, 4).equals("bad");
+}

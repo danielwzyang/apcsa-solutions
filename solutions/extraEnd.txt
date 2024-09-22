@@ -1,0 +1,6 @@
+public String extraEnd(String str) {
+    // we get the end of the string by using substring
+    String end = str.substring(str.length() - 2);
+    // return 3 copies of end concatenated 
+    return end + end + end;
+}

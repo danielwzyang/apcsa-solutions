@@ -1,0 +1,20 @@
+public boolean xyzThere(String str) {
+    // if the string is less than 3 characters then it can't have xyz at all since xyz is 3 characters
+    if (str.length() < 3) {
+        return false;
+    }
+    
+    // we stop at str.length() - 2 because our window size is 3 characters
+    for (int i = 0; i < str.length() - 2; i++) {
+        // if our current window of 3 characters is equal to xyz, we have to check to see if there's a period before it
+        // if the i is 0, then there's no character before it so the window is valid
+        // if there is a character, we need to check if it's a period
+        if (str.substring(i, i + 3).equals("xyz") && (i == 0 || str.charAt(i - 1) != '.')) {
+            // we return true if we find a valid window and the for loop is cut short
+            return true;
+        }
+    }
+
+    // if the whole loop finishes, that means that we didn't find a valid window, so we return false
+    return false;
+}

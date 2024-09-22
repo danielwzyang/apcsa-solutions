@@ -1,0 +1,4 @@
+public String makeOutWord(String out, String word) {
+    // we sandwich the word between the first two characters of out and the last two characters of out
+    return out.substring(0, 2) + word + out.substring(2, 4);
+}

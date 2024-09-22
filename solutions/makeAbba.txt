@@ -1,0 +1,4 @@
+public String makeAbba(String a, String b) {
+    // we just concat all the strings into the pattern abba
+    return a + b + b + a; 
+}
