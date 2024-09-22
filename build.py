@@ -1,9 +1,12 @@
 # this file is used to convert the .txt files from the ./solutions folder into .html files in the ./pages folder
 # it does this using a template of an html file and adding the text from the .txt file into the .html file
-# this also updates the list of links in the homepage
+# this also updates the list of links tp use for the homepage
 
 # imports a python module that allows us to read the file system
 import os
+
+# imports a python module that allows us to edit json files
+import json
 
 # lists all the files in the directory ./solutions
 files = os.listdir("./solutions")
@@ -16,8 +19,11 @@ files = [file for file in files if file !="new"]
 with open("./template.html", "r") as file:
     template = file.read()
 
-# i'm using this later on to add a list of all the links into the homepage
-nameList = []
+# im using this to store a list of names to dump into a json file
+names = []
+
+# i'm using this to store links for the homepage
+elements = ""
 
 # goes through every file in the ./src directory
 for path in files:
@@ -30,9 +36,14 @@ for path in files:
         # gets the name of the file and removes the .txt ending so it becomes just the name
         # ex: Test.txt -> Test
         name = path.replace(".txt", "")
+        
+        # adding the name to our list
+        names.append(name)
 
-        # adds the name to the list
-        nameList.append(name)
+        '''
+        # adds the link to the homepage list
+        elements += f'<a class="w-fit text-base px-3 py-1 border rounded-xl hover:bg-[#2b2b33]" href="pages/{name}.html">{name}</a>'
+        '''
 
         # now we're going to use the template file and insert our code
         content = template
@@ -45,19 +56,6 @@ for path in files:
             # puts the content into the file
             newFile.write(content)
 
-# string to store all the <a> elements
-elements = ""
-
-# converts the names into <a> elements for html
-for name in nameList:
-    elements += f'<a class="w-fit text-base px-3 py-1 border rounded-xl hover:bg-[#2b2b33]" href="pages/{name}.html">{name}</a>'
-
-# using a template again
-with open("./indexTemplate.html", "r") as file:
-    # inserting our list
-    content = file.read()
-    content = content.replace("[list]", elements)
-    
-# writing the content into the homepage
-    with open("./index.html", "w") as file:
-        file.write(content)
+# dumps the list of names into a json file that i'm using in the homepage
+with open("./solutions.json", "w") as file:
+    json.dump(names, file)
