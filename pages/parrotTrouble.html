@@ -17,8 +17,10 @@
 </head>
 
 <body>
-    
-    <h1 class="w-fit m-auto my-5 font-sans text-white text-3xl">parrotTrouble</h1>
+    <div class="w-fit m-auto my-5">
+        <a class="font-sans text-white text-3xl hover:underline" href="">parrotTrouble</a>
+    </div>
+    <p class="text-balance text-sm mx-auto mb-7 text-center text-[#5c6370] w-[450px] italic">We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return true if we are in trouble.</p>
     <div class="w-fit m-auto">
         <pre class="java text-sm"><code>public boolean parrotTrouble(boolean talking, int hour) {
     // we are in trouble if the parrot is talking and the hour is between 7 and 20

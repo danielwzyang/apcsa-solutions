@@ -1,3 +1,6 @@
+~https://codingbat.com/prob/p108853?parent=/home/jnovillo@stuy.edu/apcsa_strings_1~
+#Given a string, return a new string made of 3 copies of the last 2 chars of the original string. The string length will be at least 2.#
+
 public String extraEnd(String str) {
     // we get the end of the string by using substring
     String end = str.substring(str.length() - 2);

@@ -1,3 +1,6 @@
+~https://codingbat.com/prob/p147448?parent=/home/jnovillo@stuy.edu/apcsa_strings_loops_cw~
+#Return the number of times that the string "hi" appears anywhere in the given string.#
+
 public int countHi(String str) {
     int count = 0;
 

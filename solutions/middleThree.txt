@@ -1,3 +1,6 @@
+~https://codingbat.com/prob/p115863?parent=/home/jnovillo@stuy.edu/apcsa_strings_1~
+#Given a string of odd length, return the string length 3 from its middle, so "Candy" yields "and". The string length will be at least 3.#
+
 public String middleThree(String str) {
     // to find the index of the middle of the string, we divide the length by 2
         // ex: abcdefg has a length of 7

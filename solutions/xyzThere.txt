@@ -1,3 +1,6 @@
+~https://codingbat.com/prob/p136594?parent=/home/jnovillo@stuy.edu/apcsa_strings_loops_cw~
+#Return true if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.#
+
 public boolean xyzThere(String str) {
     // if the string is less than 3 characters then it can't have xyz at all since xyz is 3 characters
     if (str.length() < 3) {

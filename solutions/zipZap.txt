@@ -1,3 +1,6 @@
+~https://codingbat.com/prob/p180759?parent=/home/jnovillo@stuy.edu/apcsa_strings_loops_cw~
+#Look for patterns like "zip" and "zap" in the string -- length-3, starting with 'z' and ending with 'p'. Return a string where for all such words, the middle letter is gone, so "zipXzap" yields "zpXzp".#
+
 public String zipZap(String str) {
     // if our string is less than 3 characters long, then it cannot match the pattern
     if (str.length() < 3) {

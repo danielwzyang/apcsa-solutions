@@ -8,6 +8,9 @@ import os
 # imports a python module that allows us to edit json files
 import json
 
+# imports a python module that allows us to use regex which is basically used for string filtering
+import re
+
 # lists all the files in the directory ./solutions
 files = os.listdir("./solutions")
 # i have a directory on my local inside of the solutions directory called new
@@ -29,9 +32,19 @@ elements = ""
 for path in files:
     # opens the txt file by going to its location
     with open("./solutions/" + path, "r") as file:
-        # reads the file and saves the text
+        # reads the file and searches for the description and code using regex
         # strip() just removes empty spaces in the beginning and the end
-        code = file.read().strip()
+
+        text = file.read().strip()
+        # for all the links i put them in like this ~ link ~
+        match = re.search(r'~(.+?)~', text, re.DOTALL)
+        href = match.group(1).strip() if match else ""
+        # for all the descriptions i put them in like this # description #
+        match = re.search(r'#(.+?)#', text, re.DOTALL)
+        description = match.group(1).strip() if match else ""
+        # all the solutions start with public (since they're methods)
+        match = re.search(r'public.+', text, re.DOTALL)
+        code = match.group(0).strip() if match else ""
 
         # gets the name of the file and removes the .txt ending so it becomes just the name
         # ex: Test.txt -> Test
@@ -40,14 +53,11 @@ for path in files:
         # adding the name to our list
         names.append(name)
 
-        '''
-        # adds the link to the homepage list
-        elements += f'<a class="w-fit text-base px-3 py-1 border rounded-xl hover:bg-[#2b2b33]" href="pages/{name}.html">{name}</a>'
-        '''
-
-        # now we're going to use the template file and insert our code
+        # now we're going to use the template file and insert data in
         content = template
         content = content.replace("[title]", name)
+        content = content.replace("[href]", href)
+        content = content.replace("[desc]", description)
         content = content.replace("[code]", code)
 
         # creates a new html file in the ./pages directory with our new name

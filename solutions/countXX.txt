@@ -1,4 +1,7 @@
-int countXX(String str) {
+~https://codingbat.com/prob/p194667?parent=/home/jnovillo@stuy.edu/apcsa_strings_loops_cw~
+#Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".#
+
+public int countXX(String str) {
     int count = 0;
 
     // we can only go up to str.length() - 1 instead of str.length() bc we're looking at substrings with length 2

@@ -1,3 +1,6 @@
+~https://codingbat.com/prob/p171260?parent=/home/jnovillo@stuy.edu/apcsa_strings_loops_cw~
+#Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end should not be removed.#
+
 public String stringX(String str) {
     String res = "";
     for (int i = 0; i < str.length(); i++) {

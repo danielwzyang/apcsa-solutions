@@ -1,3 +1,6 @@
+~https://codingbat.com/prob/p142270?parent=/home/jnovillo@stuy.edu/apcsa_strings_loops_cw~
+#iven a string and a non-negative int n, return a larger string that is n copies of the original string.#
+
 public String stringTimes(String str, int n) {
     String res = "";
     
