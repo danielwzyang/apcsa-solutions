@@ -107,7 +107,7 @@
 }
 
 /*
-! tailwindcss v3.4.12 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.13 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -605,20 +605,16 @@ video {
   width: fit-content;
 }
 
-.w-\[100px\] {
-  width: 100px;
-}
-
-.min-w-\[200px\] {
-  min-width: 200px;
-}
-
-.min-w-\[100px\] {
-  min-width: 100px;
-}
-
 .max-w-\[90vw\] {
   max-width: 90vw;
+}
+
+.max-w-\[95vw\] {
+  max-width: 95vw;
+}
+
+.max-w-\[85vw\] {
+  max-width: 85vw;
 }
 
 .flex-wrap {

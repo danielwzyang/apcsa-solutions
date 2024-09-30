@@ -20,7 +20,7 @@
     <div class="w-fit m-auto my-5">
         <a class="font-sans text-white text-3xl hover:underline" href="https://codingbat.com/prob/p103360?parent=/home/jnovillo@stuy.edu/apcsa" target="_blank" rel="noopener noreferrer">dateFashion</a>
     </div>
-    <p class="text-balance text-sm mx-auto mb-7 text-center text-[#5c6370] w-[450px] italic">You and your date are trying to get a table at a restaurant. The parameter "you" is the stylishness of your clothes, in the range 0..10, and "date" is the stylishness of your date's clothes. The result getting the table is encoded as an int value with 0=no, 1=maybe, 2=yes. If either of you is very stylish, 8 or more, then the result is 2 (yes). With the exception that if either of you has style of 2 or less, then the result is 0 (no). Otherwise the result is 1 (maybe).</p>
+    <p class="text-balance text-sm mx-auto mb-7 text-center text-[#5c6370] w-[450px] max-w-[85vw] italic">You and your date are trying to get a table at a restaurant. The parameter "you" is the stylishness of your clothes, in the range 0..10, and "date" is the stylishness of your date's clothes. The result getting the table is encoded as an int value with 0=no, 1=maybe, 2=yes. If either of you is very stylish, 8 or more, then the result is 2 (yes). With the exception that if either of you has style of 2 or less, then the result is 0 (no). Otherwise the result is 1 (maybe).</p>
     <div class="w-fit m-auto">
         <pre class="java text-sm"><code>public int dateFashion(int you, int date) {
     if (you <= 2 || date <= 2) {

@@ -11,11 +11,15 @@
         rel="stylesheet">
 
     <script type="module">
-        import data from "./solutions.json" with {type: "json"}
+        async function fetchData() {
+            const response = await fetch("./solutions.json")
+            const data = await response.json()
+            return data
+        }
 
-        window.update = function (search="") {
-            var newData = data
-            newData = data.filter(name => name.toLowerCase().startsWith(search.toLowerCase()))
+        window.update = async function (search="") {
+            var data = await fetchData()
+            var newData = data.filter(name => name.toLowerCase().startsWith(search.toLowerCase()))
             console.log(newData)
 
             var list = document.getElementById("list")
